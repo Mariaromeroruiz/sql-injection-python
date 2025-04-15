@@ -148,8 +148,9 @@ python app.py
 ![SQL Injection ataque](images/Consulta_usuarios_injection.png)
 
 🛡️ http://127.0.0.1:5000/seguro    # 1 OR 1=1 añade y comprueba que aparece el mensaje "No se encontró ningún usuario."                                             Inyección bloqueada correctamente.
-![SQL Injection ataque](images/Consulta_usuarios.png)
-![SQL Injection ataque](images/Consulta_usuarios1.png)
+
+![SQL Injection ataque](images/Captura_usuarios_seguro.png)
+![SQL Injection ataque](images/Captura_usuarios_seguro1.png)
 
 ## Autora de este proyecto: 
 María Victoria Romero – Estudiante de ciberseguridad
