@@ -37,8 +37,9 @@ sql-injection/
   ├── ver_usuarios.py 
 # Este archivo con la explicación detallada
     └── README.md  
-
-
+# Crear aplicación con Flask para probar los fallos y las soluciones
+  ├── app.py
+ 
 ---
 
 ## Base de datos
@@ -109,7 +110,49 @@ python crear_db.py
 ## Luego prueba:
 python vulnerable.py     # Para ver el fallo
 python seguro.py         # Para ver la solución
+
+---
+
+## Extensión Web – App en Flask
+Como parte de la ampliación del proyecto, creé una mini aplicación web usando **Flask**, que simula la vulnerabilidad y la solución desde una interfaz web.
+
+La app tiene dos rutas:
+
+| Ruta | Descripción |
+|------|-------------|
+| `/vulnerable` | Consulta de usuarios con entrada directa y vulnerable a SQL Injection |
+| `/seguro`     | Consulta protegida usando parámetros seguros (`prepared statements`) |
+
+---
+
+### Cómo ejecutarla
+
+1. Asegúrate de tener Flask instalado:
+   
+   ```bash
+   pip install flask
+
+2. Ejecuta el script:
+
+python app.py
+
+![SQL Injection ataque](images/Código_app.py.png)
+![SQL Injection ataque](images/Código_app.py2.png)
+![SQL Injection ataque](images/Código_app.py3.png)
+
+3. Abre tu navegador en:
+
+🧨 http://127.0.0.1:5000/vulnerable     # 1 OR 1=1  añade y comprueba que muestra toda la base de datos
+
+![SQL Injection ataque](images/Consulta_usuarios_normal.png)
+![SQL Injection ataque](images/Consulta_usuarios_injection.png)
+
+🛡️ http://127.0.0.1:5000/seguro    # 1 OR 1=1 añade y comprueba que aparece el mensaje "No se encontró ningún usuario."                                             Inyección bloqueada correctamente.
+![SQL Injection ataque](images/Consulta_usuarios.png)
+![SQL Injection ataque](images/Consulta_usuarios1.png)
+
 ## Autora de este proyecto: 
 María Victoria Romero – Estudiante de ciberseguridad
 Me puedes encontrar en GitHub como https://github.com/Mariaromeroruiz    
-@Mariaromeroruiz
+@mariaromeroruiz
+
